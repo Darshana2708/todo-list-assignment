@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        h3{
+            background-color: blueviolet;
+            padding: 1.2vh;
+            color: white;
+        }
+        #inp{
+            background-color: rgb(37, 37, 43);
+            padding: 0.7vh;
+            color: aliceblue;
+        }
+        #input-item > button{
+            padding: 0.7vh;
+        }
+        li{
+            list-style:  none;
+            background-color: rgb(225, 220, 220);
+            padding: 0.5vh;
+        }
+        li:nth-child(odd){
+            background-color: grey;
+            padding: 0.5vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- main heading  -->
+      <div class="row">
+             <div class="col-12">
+                   
+                       <h1> Here we are making To Do list </h1>
+
+             </div>
+      </div>
+       <!-- list box  -->
+       <div class="row"   id="main-box">
+
+           <!-- second heading -->
+           <h3> Vegetable grocery list </h3>
+
+         <div class="col-12">
+
+           <div id="input-item">
+               <input type="text" placeholder="Enter vegetable" id="inp">
+               <button onclick="add()">Add Item</button>
+               <br>
+               <span id="require"></span>
+           </div>
+
+         </div>
+
+          <div class="row">
+                <div class="col-4"></div>
+              <div class="col-4">
+               <ul id="listbox">
+
+               </ul>
+   
+              </div>
+          </div>
+
+       </div>
+
+
+
+
+
+
+   </div>
+   <!-- container end  -->
+
+   <script>
+
+function add() {
+            
+            let list = document.createElement('li')
+            document.getElementById('listbox').appendChild(list);
+            let output = document.getElementById('inp').value;
+           
+
+            if(output === ''){
+                document.getElementById('require').innerHTML = 'Enter here '
+            }else{
+                list.innerHTML = output;
+            }
+            document.getElementById('inp').value = '';
+
+        }
+
+   </script>
+
+</body>
+</html>
